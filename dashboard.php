@@ -180,17 +180,16 @@
                         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1> <br>
                         <h6 class="h6 mb-0 text-gray-800"> <?php echo 'Welcome, '. $_SESSION['fullname']; ?></h6>
                     </div>
-
-                    <?php
-                        $sql = "SELECT * FROM tblcandidate";
-                        $query_result = mysqli_query($conn, $sql);
-                        $result = mysqli_num_rows($query_result);
-                        if($result > 0){
-                            while ($row = mysqli_fetch_array($query_result)){
-
-                    ?>
                     
                     <div class="row">
+                        <?php
+                             $sql = "SELECT * FROM tblcandidate";
+                             $query_result = mysqli_query($conn, $sql);
+                             $result = mysqli_num_rows($query_result);
+                             if($result > 0){
+                                while ($row = mysqli_fetch_array($query_result)){
+
+                        ?>
                         <div class="col-xl-4 col-lg-4 col-md-4">
                                 <!-- Basic Card Example -->
                             <form action="dashboard.php" method="POST">
@@ -215,14 +214,11 @@
                                 </div>
                             </form>
                         </div>
-                    </div>
-
-                    <?php
-
-                            }
+                        <?php
+                             }
                         }
-                    ?>
-
+                        ?>
+                    </div>
                 </div>
 
             </div>
